@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 import { IoArrowBackCircleOutline, IoArrowForwardCircleOutline } from "react-icons/io5";
+import CustomLink from "../LinkForIOS/Link";
 
 SwiperCore.use([Navigation]);
 let constants = [
@@ -78,7 +79,7 @@ const PackagesSlider = ({data}) => {
             >
             {data?.map((item, i) => (
                  <SwiperSlide key={item?.collection_mapping_id} className="mb-35">
-                            <Link draggable='false' href={`/collection/${item?.collection_handle}`}>
+                            <CustomLink draggable='false' href={`/collection/${item?.collection_handle}`}>
                      <div className="card-1 cursor_pointer">
                          <figure className=" img-hover-scale overflow-hidden">
                                  <a draggable='false' className="w-100">
@@ -95,7 +96,7 @@ const PackagesSlider = ({data}) => {
                          {item?.title}
                          </h5> */}
                      </div>
-                             </Link>
+                             </CustomLink>
                  </SwiperSlide>
              ))}
             </Swiper>
