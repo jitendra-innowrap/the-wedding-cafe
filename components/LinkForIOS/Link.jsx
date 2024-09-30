@@ -15,11 +15,16 @@ const CustomLink = ({ href, query, children, as, ...props }) => {
 
   useEffect(() => {
     // Check if the device is iOS and set the state
-    setIsIOS(isIOSDevice());
+    if (typeof window !== "undefined") {
+      setIsIOS(isIOSDevice());
+    }
   }, []);
 
   // Construct the full URL for the `a` tag with query params
   const generateHrefWithQuery = (href, query) => {
+    // Avoid using window in server-side rendering
+    if (typeof window === "undefined") return href;
+
     const url = new URL(href, window.location.origin);
     if (query) {
       Object.keys(query).forEach((key) => {
@@ -29,8 +34,8 @@ const CustomLink = ({ href, query, children, as, ...props }) => {
     return url.toString();
   };
 
-  // Full URL for `a` tag
-  const fullHref = generateHrefWithQuery(href, query);
+  // Only generate href when in the browser (iOS case)
+  const fullHref = isIOS ? generateHrefWithQuery(href, query) : href;
 
   if (isIOS) {
     // Render an 'a' tag for iOS devices with query parameters
