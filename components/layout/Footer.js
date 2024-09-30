@@ -9,6 +9,7 @@ import { CiFacebook } from "react-icons/ci";
 import { useRouter } from "next/router";
 import { AiOutlineYoutube } from "react-icons/ai";
 import storage from "../../util/localStorage";
+import CustomLink from "../LinkForIOS/Link";
 
 const Footer = () => {
     const router =  useRouter();
@@ -23,13 +24,13 @@ const Footer = () => {
                             <div className="col-md-6 col-lg-4">
                                 <div className="widget-about font-md mb-40">
                                     <div className="logo logo-width-1 wow fadeIn animated">
-                                        <Link href="/"><a>
+                                        <CustomLink href="/"><a>
                                             <img
                                                 src="/assets/imgs/theme/the-party-cafe-yellow-icon.png"
                                                 alt="logo"
                                             />
                                         </a>
-                                        </Link>
+                                        </CustomLink>
                                     </div>
                                     <h5 className="widget-title mt-20 mb-10 fw-600 wow fadeIn animated">
                                         Contact Us
@@ -52,22 +53,22 @@ const Footer = () => {
                                 </h5>
                                 <ul className="footer-list wow fadeIn animated mb-40">
                                     <li>
-                                        <Link href="/about-us">About Us</Link>
+                                        <CustomLink href="/about-us">About Us</CustomLink>
                                     </li>
                                     {/* <li>
-                                        <Link href="/media-and-press-release">Media/ Press Release</Link>
+                                        <CustomLink href="/media-and-press-release">Media/ Press Release</CustomLink>
                                     </li> */}
                                     <li>
-                                        <Link href="/contact-us">Contact Us</Link>
+                                        <CustomLink href="/contact-us">Contact Us</CustomLink>
                                     </li>
                                     <li>
-                                        <Link href="/disclaimer">Disclaimer</Link>
+                                        <CustomLink href="/disclaimer">Disclaimer</CustomLink>
                                     </li>
                                     <li>
-                                        <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+                                        <CustomLink href="/terms-and-conditions">Terms &amp; Conditions</CustomLink>
                                     </li>
                                     <li>
-                                        <Link href="/privacy-policy">Privacy Policies</Link>
+                                        <CustomLink href="/privacy-policy">Privacy Policies</CustomLink>
                                     </li>
                                 </ul>
                             </div>
@@ -77,16 +78,16 @@ const Footer = () => {
                                 </h5>
                                 <ul className="footer-list wow fadeIn animated mb-40">
                                     <li>
-                                        <Link href={!user?`/page-login-register`:"/my-profile"}>Sign In</Link>
+                                        <CustomLink href={!user?`/page-login-register`:"/my-profile"}>Sign In</CustomLink>
                                     </li>
                                     <li>
-                                        <Link href="/my-profile">My Profile</Link>
+                                        <CustomLink href="/my-profile">My Profile</CustomLink>
                                     </li>
                                     <li>
-                                        <Link href="/shop-cart">View Cart</Link>
+                                        <CustomLink href="/shop-cart">View Cart</CustomLink>
                                     </li>
                                     <li>
-                                        <Link href="/shop-wishlist">My Wishlist</Link>
+                                        <CustomLink href="/shop-wishlist">My Wishlist</CustomLink>
                                     </li>
                                 </ul>
                             </div>
@@ -143,7 +144,7 @@ const Footer = () => {
                         <div className="col-lg-12">
                             <p className="float-md-left font-sm mb-0 text-center">
                             Copyright &copy; {new Date().getFullYear()},
-                                <Link href='/'><a><strong className="text-primary-light-1"> The Party Cafe</strong></a></Link> . All Rights Reserved
+                                <CustomLink href='/'><a><strong className="text-primary-light-1"> The Party Cafe</strong></a></CustomLink> . All Rights Reserved
                             </p>
                              
                         
